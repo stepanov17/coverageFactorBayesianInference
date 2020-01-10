@@ -13,28 +13,10 @@ public class CalcK_U {
     private final double p0 = 0.99;
 
 
-    private double gamma(double x) {
-
-        double p[] = {
-             1.000000000190015, 76.18009172947146, -86.50532032941677, 24.01409824083091,
-            -1.231739572450155, 1.208650973866179e-3, -5.395239384953e-6};
-
-        double res = p[0];
-        for (int i = 1; i < p.length; ++i) {
-            res += p[i] / (x + (double) i);
-        }
-
-        res *= (Math.sqrt(2. * Math.PI) / x);
-        res *= Math.pow(x + 5.5, x + 0.5);
-        res *= Math.exp(-(x + 5.5));
-
-        return res;
-    }
-
     public CalcK_U(double alpha) {
 
         this.alpha = alpha;
-        lambda = Math.sqrt(gamma(1. / alpha) / gamma(3. / alpha));
+        lambda = new Gamma().getLambda(alpha);
         System.out.println("// U, p0 = " + p0 + ", n = " + n + ", alpha = " + alpha + ", lambda = " + lambda);
 
         double h  = 0.0005;
