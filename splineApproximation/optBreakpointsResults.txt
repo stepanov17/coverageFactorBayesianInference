@@ -1,7 +1,7 @@
 // maxRelErr - max relative error in the x points used for the spline construction
 
 
-conv(N, E(alpha)):
+conv(n * N, E(alpha)):
 ________________________________________________
 
 p0 = 0.95, n = 4
@@ -96,7 +96,7 @@ maxRelErr = 0.10%
 
 ================================================
 
-conv(U, E(alpha)):
+conv(n * U, E(alpha)):
 ________________________________________________
 
 p0 = 0.95, n = 4
